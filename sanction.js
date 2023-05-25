@@ -44,6 +44,7 @@ input.addEventListener("keypress", (e) => {
         console.log(equal);
         if (equal.length > 1) {
           console.log(`${inputArray[i]} est présent ${equal.length} fois`);
+          alert(`${inputArray[i]} est présent ${equal.length} fois`);
           inputArray.splice(i, equal.length);
           i--;
         }
@@ -95,6 +96,7 @@ button.addEventListener("click", (e) => {
       console.log(equal);
       if (equal.length > 1) {
         console.log(`${inputArray[i]} est présent ${equal.length} fois`);
+        alert(`${inputArray[i]} est présent ${equal.length} fois`);
         inputArray.splice(i, equal.length);
         i--;
       }
