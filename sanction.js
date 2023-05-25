@@ -12,8 +12,8 @@ input.addEventListener("keypress", (e) => {
     if (input.value.length < 3) {
       errors.push(`T'en a pas assez mis`);
     }
-    if (input.value.length > 20) {
-      errors.push(`Doucement moins de 20 charactères`);
+    if (input.value.length > 25) {
+      errors.push(`Doucement moins de 25 charactères`);
     }
     if (!input.value.includes(",")) {
       errors.push(`Y'a pas de virgules la dedans`);
@@ -25,23 +25,26 @@ input.addEventListener("keypress", (e) => {
     } else {
       //demande à l'utilisateur de saisir une série de nombres séparés par des virgules
       //et vérifie si des doublons sont présents. Affichez les doublons trouvés le cas échéant
+
       //Traduit le string en array
       const inputValue = input.value;
-      console.log(inputValue);
+      // console.log(inputValue);
       const inputArray = inputValue.split(",");
-      console.log(inputArray);
+      // console.log(inputArray);
 
       const sortedArray = inputArray.sort(function (a, b) {
         return a - b;
       });
-      console.log(sortedArray);
+      // console.log(sortedArray);
 
-      // //Recherche les doublons
+      //Recherche les doublons
       let equal;
       for (let i = 0; i < inputArray.length; i++) {
         equal = 0;
         equal = inputArray.filter((x) => x === inputArray[i]);
-        console.log(equal);
+        // console.log(equal);
+
+        //Si une valeur est présente plusieurs fois, tu l'affiche, tu la dégage et tu n'incrémente pas l'index
         if (equal.length > 1) {
           console.log(`${inputArray[i]} est présent ${equal.length} fois`);
           alert(`${inputArray[i]} est présent ${equal.length} fois`);
@@ -62,8 +65,8 @@ button.addEventListener("click", (e) => {
   if (input.value.length < 3) {
     errors.push(`T'en a pas assez mis`);
   }
-  if (input.value.length > 20) {
-    errors.push(`Doucement moins de 20 charactères`);
+  if (input.value.length > 25) {
+    errors.push(`Doucement moins de 25 charactères`);
   }
   if (!input.value.includes(",")) {
     errors.push(`Y'a pas de virgules la dedans`);
@@ -82,18 +85,19 @@ button.addEventListener("click", (e) => {
     const inputArray = inputValue.split(",");
     // console.log(inputArray);
 
-    //Trie l'array par ordre numérique
     const sortedArray = inputArray.sort(function (a, b) {
       return a - b;
     });
     // console.log(sortedArray);
 
+    //Recherche les doublons
     let equal;
-    //Si une valeur est présente plusieurs fois, tu l'affiche, tu la dégage et tu n'incrémente pas l'index
     for (let i = 0; i < inputArray.length; i++) {
       equal = 0;
       equal = inputArray.filter((x) => x === inputArray[i]);
-      console.log(equal);
+      // console.log(equal);
+
+      //Si une valeur est présente plusieurs fois, tu l'affiche, tu la dégage et tu n'incrémente pas l'index
       if (equal.length > 1) {
         console.log(`${inputArray[i]} est présent ${equal.length} fois`);
         alert(`${inputArray[i]} est présent ${equal.length} fois`);
